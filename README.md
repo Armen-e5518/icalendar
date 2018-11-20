@@ -8,12 +8,12 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-composer require armen-e5518/icalendar
+composer require armen-e5518/icalendar "@dev"
 ```
 or add
 
 ```json
-"armen-e5518/icalendar" : "*"
+"armen-e5518/icalendar" : "@dev"
 ```
 
 to the require section of your application's `composer.json` file.

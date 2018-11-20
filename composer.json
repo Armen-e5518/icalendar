@@ -27,8 +27,8 @@
         "source": "https://github.com/Armen-e5518/icalendar"
     },
     "autoload": {
-        "psr-4": {
-            "Calendar\\": "src/"
+        "psr-0": {
+            "Calendar": "src"
         }
     }
 }
