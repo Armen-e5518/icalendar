@@ -26,9 +26,6 @@
         "issues": "https://github.com/Armen-e5518/icalendar/issues",
         "source": "https://github.com/Armen-e5518/icalendar"
     },
-    "require": {
-        "yiisoft/yii2": "^2.0"
-    },
     "autoload": {
         "psr-4": {
             "Calendar\\": "src/"
