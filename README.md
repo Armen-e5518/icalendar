@@ -30,7 +30,7 @@ Using a model with a basic preset:
 use icalendar\iCalendar;
 
 
-$ical = new iCalEasyReader(); 
+$ical = new iCalendar(); 
 $lines = $ical->load( file_get_contents( 'example.ics' ) ); 
 
 var_dump( $lines ); 
