@@ -12,9 +12,19 @@ namespace Calendar;
 
 class iCalendar
 {
+    /**
+     * @var null
+     */
     private $ical = null;
+    /**
+     * @var null
+     */
     private $_lastitem = null;
 
+    /**
+     * @param $data
+     * @return array|bool|null
+     */
     public function &load($data)
     {
         $this->ical = false;
@@ -49,7 +59,6 @@ class iCalendar
             }
         }
 
-        // Procesing
         if (!is_null($first) and !is_null($last)) {
             $lines = array_slice($lines, $first + 1, ($last - $first - 1), true);
 
@@ -112,6 +121,11 @@ class iCalendar
         return $this->ical;
     }
 
+    /**
+     * @param $value
+     * @param $item
+     * @return mixed
+     */
     public function addType(&$value, $item)
     {
         $type = explode('=', $item);
@@ -124,6 +138,11 @@ class iCalendar
         return $value;
     }
 
+    /**
+     * @param $line
+     * @param $group
+     * @param $parentgroup
+     */
     public function addItem($line, $group, $parentgroup)
     {
         $line = $this->transformLine($line);
@@ -165,6 +184,9 @@ class iCalendar
         }
     }
 
+    /**
+     * @param $line
+     */
     public function concatItem($line)
     {
         $line = mb_substr($line, 1);
@@ -177,6 +199,10 @@ class iCalendar
         }
     }
 
+    /**
+     * @param $line
+     * @return false|string
+     */
     public function transformLine($line)
     {
         $patterns = ['\\\\[n]', '\\\\[t]', '\\\\,', '\\\\;'];
@@ -185,6 +211,12 @@ class iCalendar
         return $this->mb_eregi_replace_all($patterns, $replacements, $line);
     }
 
+    /**
+     * @param $pattern
+     * @param $replacement
+     * @param $string
+     * @return false|string
+     */
     public function mb_eregi_replace_all($pattern, $replacement, $string)
     {
         if (is_array($pattern) and is_array($replacement)) {
