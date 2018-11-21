@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Calendar": "src"
+            "Calendar\\": "src/"
         }
     }
 }
